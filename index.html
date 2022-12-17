@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="facebook.css">
 </head>
 <body>
+    <form>
     <div class="textbox">
         <h1>
             facebook
@@ -19,9 +20,9 @@
 
     <div class="container">
 <div class="form">
-    <input type="text" class="text" placeholder="Enter Your Email or Phone number"> <br>
-    <input type="password" class="text" placeholder="Password"><br>
-    <button>
+    <input type="text" name="email/number" class="text" placeholder="Enter Your Email or Phone number"> <br>
+    <input type="password" name="pass" class="text" placeholder="Password"><br>
+    <button type="submit">
         Log In
     </button>
     <p><a href="">forgot password?</a><br></p>
@@ -36,6 +37,24 @@
 </div>
 
     </div>
+
+    </form>
+
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent HTML refresh
+        const fd = new FormData(form); // Converts to array of arrays
+
+        for (item of fd) {
+            console.log(item)
+        }
+     });
+
+
+    
+</script>
     
 </body>
 </html>
